@@ -1,5 +1,0 @@
-#Get-ADGroupMember -Identity 'Caprock - All Computers' | foreach {
-Invoke-Command -ComputerName CAPROCK04 -ScriptBlock {
-& C:\Users\Public\Downloads\CylanceProtectSetup.exe @('-uninstall', '-quiet')
-}
-

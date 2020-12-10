@@ -1,5 +1,0 @@
-$computers = Get-Content 'C:\MININT\Basic.txt'
-ForEach ($computer in $computers)
-{
-    Invoke-Command $computer {Get-PartitionSupportedSize -DriveLetter C}      
-}

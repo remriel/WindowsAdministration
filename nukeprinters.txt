@@ -1,5 +1,0 @@
-Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\DeviceClasses\{0ecef634-6ef0-472a-8085-5ad023ecbccd}\##?#SWD#PRINTENUM#*"| Remove-Item -Recurse -Force
-Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Class\{1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}\*" -exclude "Properties" | Remove-Item -Recurse -Force
-Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Enum\SWD\PRINTENUM\*"| Remove-Item -Recurse -Force
-Get-childitem "HKLM:\SYSTEM\CurrentControlSet\Control\DeviceContainers\" -ErrorAction SilentlyContinue -Recurse -exclude "{00000000-0000-0000-FFFF-FFFFFFFFFFFF}"|where-object {$_.property -like "SWD\PRINTENUM*"}| foreach-object {(get-item $_.PSParentPath).PSParentPath}|Remove-Item -recurse -Force
-Get-childItem "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Providers\Client Side Rendering Print Provider\*" | Remove-Item -Recurse -Force

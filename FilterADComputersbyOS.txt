@@ -1,1 +1,0 @@
-Get-ADComputer -Filter {Enabled -eq $True -and operatingsystem -like "Windows 10*"} | ForEach-Object { Add-ADGroupMember -Identity 'Caprock - All Computers' -Members $_ }

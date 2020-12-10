@@ -1,6 +1,0 @@
-$user = "user"
-$pass = "pass"
-$task = "Remote Workstation Cleanup"
-$time = "02:04:00"
-$path = "C:\Cleanup\Cleanup.ps1"
-schtasks /create /tn $task /st $time /sc daily /ru $user /rp $pass /RL highest /TR "C:\WINDOWS\system32\windowspowershell\v1.0\powershell.exe $path"

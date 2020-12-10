@@ -1,3 +1,0 @@
-Select * from Win32_ComputerSystem where DomainRole = 5
-
-us.pool.ntp.org,0x1 1.us.pool.ntp.org,0x1 2.us.pool.ntp.org,0x1 3.us.pool.ntp.org,0x1

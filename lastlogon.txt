@@ -1,2 +1,0 @@
-$username = "blumley"
-[datetime]::FromFileTime((Get-ADDomainController -Filter * | foreach {Get-ADUser $username -Properties LastLogon -Server $_.Name | select LastLogon} | Measure-Object -Property LastLogon -Maximum).Maximum)

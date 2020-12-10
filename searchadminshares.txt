@@ -1,8 +1,0 @@
-net view |% {
-    if ($_ -match "(\\\\\S+)") {$computers += @($matches[1])}
-     }
-$computers |% {if (test-path ($_ + '\c$\windows\fonts\nexa.otf')){$found += @($_)}
-
-}
-
-$found | out-file c:\search\found.txt
