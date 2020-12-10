@@ -1,0 +1,26 @@
+## Function ## 
+
+#Get-ADGroupMember -Identity 'RDM-Computers' | foreach {
+
+#Invoke-Command -ComputerName $_.name -ScriptBlock { 
+#[System.Net.Dns]::GetHostName()
+
+$BandwidthAlertThreshold = "800" #megabits per second
+$Counter = 0
+$nics = Get-CimInstance -Query “Select BytesTotalPersec from Win32_PerfFormattedData_Tcpip_NetworkInterface” | Select-Object BytesTotalPerSec, Name
+
+foreach ($nic in $nics)
+{
+$UsedBandwidth = do
+{
+$counter++
+$nic.BytesTotalPerSec / 1Mb * 8
+}
+while ($counter -le 10)
+
+$AvgBandwidth = [math]::round(($UsedBandwidth | Measure-Object -Average).average, 2)
+$BandwidthAlert = if ($AvgBandwidth -gt $BandwidthAlertThreshold) { Write-Host “Unhealthy – Bandwidth is at $AvgBandwidth” }
+else { Write-Host “Network adapter:” $nic.Name “is healthy” }
+}
+#}
+#}
