@@ -1,0 +1,87 @@
+robocopy \\FRONTDESK3\c$\Users\customerservice \\Vsbfs\SHARE\BackupsJan2020\Rubin /E /ZB /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE /LOG:Robocopy.log
+robocopy \\sbex002-pc\c$\Users\ldavis \\Vsbfs\SHARE\BackupsJan2020\Laurelle /E /ZB /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE /LOG:Robocopy.log
+robocopy \\joeana-pc\c$\Users\joeana \\Vsbfs\SHARE\BackupsJan2020\Joeana /E /ZB /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE /LOG:Robocopy.log
+robocopy \\MYTSPARE111\c$\Users\jtenne2 \\Vsbfs\SHARE\BackupsJan2020\Diana /E /ZB /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE /LOG:Robocopy.log
+
+robocopy \\JTENNE-PC\c$\Users\jtenne \\Vsbfs\SHARE\BackupsJan2020\Joseph /E /ZB /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE /LOG:Robocopy.log
+
+robocopy \\SLOPEZ-WIN7\Users\slopez\ C:\Users\slopez /E /ZB /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE
+robocopy \\SARAHKWON-PC\Users\ST811\Downloads C:\Users\Public\Backup\Downloads /E /ZB /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE
+robocopy \\SARAHKWON-PC\Users\ST811\Documents C:\Users\Public\Backup\Documents /E /ZB /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE
+robocopy \\SARAHKWON-PC\Users\ST811\Pictures C:\Users\Public\Backup\Pictures /E /ZB /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE
+robocopy \\SARAHKWON-PC\Users\ST811\Videos C:\Users\Public\Backup\Videos /E /ZB /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE
+robocopy "\\SARAHKWON-PC\Users\ST811\AppData\Local\Google\Chrome\User Data" C:\Users\Public\Backup\UserData /E /ZB /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE
+
+robocopy E:\common \\rdm-file01\common_backup /E /ZB /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE /LOG:Robocopy.log
+
+robocopy /E /ZB /COPYALL /XJ /R:1 /W:1 /V /TEE /LOG:robocopy.log
+/E /ZB
+
+robocopy "C:\users\sbuser\desktop" "c:\users\tkubacak\desktop" /E /ZB /XO /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE /FFT /NFL /NDL /NJH /NJS
+
+robocopy "C:\users\sbuser\appdata\local\google\chrome\user data" "c:\users\tkubacak\appdata\local\google\chrome\user data" /E /ZB /XO /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE /FFT /NFL /NDL /NJH /NJS
+
+robocopy C:\users\sbuser\desktop c:\users\tharyn\desktop /MIR /XJ /FFT /R:3 /W:10 /Z /NP /NDL
+robocopy C:\users\sbuser\documents c:\users\tharyn\documents /MIR /XJ /FFT /R:3 /W:10 /Z /NP /NDL
+robocopy C:\users\sbuser\downloads c:\users\tharyn\downloads /MIR /XJ /FFT /R:3 /W:10 /Z /NP /NDL
+robocopy C:\users\sbuser\favorites c:\users\tharyn\favorites /MIR /XJ /FFT /R:3 /W:10 /Z /NP /NDL
+
+
+robocopy \\SLOPEZ-WIN7\C$\Users\slopez\ C:\Users\Public\Documents\slopez_2\ /MIR /XJ /XD \\SLOPEZ-WIN7\C$\Users\slopez\appdata /R:1 /W:1 /Z /NP /NDL
+robocopy \\SLOPEZ-WIN7\c$\share\ C:\Users\Public\Documents\share\ /MIR /XJ /R:1 /W:1 /Z /NP /NDL
+
+robocopy \\SLOPEZ-WIN7\C$\Users\tvelasquez\ C:\Users\Public\Documents\tvelasquez\ /MIR /XJ /XD \\SLOPEZ-WIN7\C$\Users\tvelasquez\appdata /R:1 /W:1 /Z /NP /NDL
+
+robocopy \\PATTY-WSK\C$\Users\pceballos\ \\VSBFS\Share\BackupsAugust2020\Patty\ /MIR /XJ /XD \\PATTY-WSK\C$\Users\pceballos\appdata\ /R:1 /W:1 /Z /NP /NDL
+robocopy "\\PATTY-WSK\C$\Users\pceballos\appdata\local\google\chrome\user data" \\VSBFS\Share\BackupsAugust2020\Patty\UserData /MIR /XJ /R:1 /W:1 /Z /NP /NDL
+robocopy \\BOB-NEW\C$\Users\dbecker\ \\VSBFS\Share\BackupsAugust2020\DBecker_backup\ /MIR /XJ /XD \\BOB-NEW\C$\Users\dbecker\appdata\ /R:1 /W:1 /Z /NP /NDL
+robocopy "\\BOB-NEW\C$\Users\dbecker\appdata\local\google\chrome\user data" \\VSBFS\Share\BackupsAugust2020\DBecker_backup\UserData /MIR /XJ /R:1 /W:1 /Z /NP /NDL
+robocopy \\SOUTHBAY01\C$\Users\agonzalez\ \\VSBFS\Share\BackupsAugust2020\Agonzalez_backup\ /MIR /XJ /XD \\SOUTHBAY01\C$\Users\agonzalez\appdata /R:1 /W:1 /Z /NP /NDL
+robocopy "\\SOUTHBAY01\C$\Users\agonzalez\appdata\local\google\chrome\user data" \\VSBFS\Share\BackupsAugust2020\Agonzalez_backup\UserData /MIR /XJ /R:1 /W:1 /Z /NP /NDL
+robocopy \\TONYA-PC\C$\Users\bdaum\ \\VSBFS\Share\BackupsAugust2020\bdaum_backup\ /MIR /XJ /XD \\TONYA-PC\C$\Users\appdata\ /R:1 /W:1 /Z /NP /NDL
+robocopy "\\TONYA-PC\C$\Users\bdaum\appdata\local\microsoft\edge\user data" \\VSBFS\Share\BackupsAugust2020\bdaum_backup\UserData /MIR /XJ /R:1 /W:1 /Z /NP /NDL
+robocopy \\MYT-WAREHOUSE2\c$\users\cvaldez\ \\VSBFS\Share\BackupsAugust2020\cvaldez_backup /MIR /XJ /XD \\MYT-WAREHOUSE2\c$\users\cvaldez\appdata /R:1 /W:1 /Z /NP /NDL
+robocopy "\\MYT-WAREHOUSE2\c$\users\cvaldez\appdata\local\google\chrome\user data" \\VSBFS\Share\BackupsAugust2020\cvaldez_backup\UserData /MIR /XJ /R:1 /W:1 /Z /NP /NDL
+robocopy \\SOUTHBAYUSER-PC\c$\Users\mcruz\ \\VSBFS\Share\BackupsAugust2020\mcruz_backup /MIR /XJ /XD \\SOUTHBAYUSER-PC\c$\Users\mcruz\appdata /R:1 /W:1 /Z /NP /NDL
+robocopy \\SOUTHBAYUSER-PC\c$\Users\mcruz\appdata\local\google\chrome\user data" \\VSBFS\Share\BackupsAugust2020\mcruz_backup\UserData /MIR /XJ /R:1 /W:1 /Z /NP /NDL
+
+robocopy C:\Users\%USERNAME%\Desktop\ \\BTC-FILE01\Personal\%USERNAME% /MIR /XJ /R:1 /W:1 /Z /NP /NDL
+robocopy \\SBHC-HAM01\c$\Users\joeana \\VSBFS\Share\BackupsAugust2020\Joeana_backup /MIR /XJ /XD AppData /R:1 /W:1 /Z /NP /NDL
+robocopy \\JAY-PC\c$\Users\tony \\VSBFS\Share\BackupsAugust2020\tony_backup /MIR /XJ /XD AppData /R:1 /W:1 /Z /NP /NDL
+
+robocopy "\\SBHC-HAM01\c$\Users\joeana\appdata\local\google\chrome\user data" \\VSBFS\Share\BackupsAugust2020\Joeana_backup\userdata /MIR /XJ /XD Cache /XD "Code Cache" /XD GPUCache /R:1 /W:1 /Z /NP /NDL
+robocopy "\\JAY-PC\c$\Users\tony\appdata\local\google\chrome\user data" \\VSBFS\Share\BackupsAugust2020\tony_backup\userdata /MIR /XJ /XD Cache /XD "Code Cache" /XD GPUCache /R:1 /W:1 /Z /NP /NDL
+
+rmdir "\\PATTY-WSK\C$\Users\pceballos\appdata\local\google\chrome\user data\default\cache" /s
+rmdir "\\PATTY-WSK\C$\Users\pceballos\appdata\local\google\chrome\user data\default\code cache" /s
+rmdir "\\PATTY-WSK\C$\Users\pceballos\appdata\local\google\chrome\user data\default\GPUCache" /s
+rmdir "\\BOB-NEW\C$\Users\dbecker\appdata\local\google\chrome\user data\default\cache" /s
+rmdir "\\BOB-NEW\C$\Users\dbecker\appdata\local\google\chrome\user data\default\code cache" /s
+rmdir "\\BOB-NEW\C$\Users\dbecker\appdata\local\google\chrome\user data\default\GPUCache" /s
+rmdir "\\SOUTHBAY01\C$\Users\agonzalez\appdata\local\google\chrome\user data\default\cache" /s
+rmdir "\\SOUTHBAY01\C$\Users\agonzalez\appdata\local\google\chrome\user data\default\code cache" /s
+rmdir "\\SOUTHBAY01\C$\Users\agonzalez\appdata\local\google\chrome\user data\default\GPUCache" /s
+rmdir "\\TONYA-PC\C$\Users\bdaum\appdata\local\microsoft\edge\user data\default\cache" /s
+rmdir "\\TONYA-PC\C$\Users\bdaum\appdata\local\microsoft\edge\user data\default\code cache" /s
+rmdir "\\TONYA-PC\C$\Users\bdaum\appdata\local\microsoft\edge\user data\default\GPUCache" /s
+rmdir "\\MYT-WAREHOUSE2\C$\Users\cvaldez\appdata\local\google\chrome\user data\default\cache" /s
+rmdir "\\MYT-WAREHOUSE2\c$\Users\cvaldez\appdata\local\google\chrome\user data\default\code cache" /s
+rmdir "\\MYT-WAREHOUSE2\C$\Users\cvaldez\appdata\local\google\chrome\user data\default\GPUCache" /s
+rmdir "\\SOUTHBAYUSER-PC\C$\Users\mcruz\appdata\local\google\chrome\user data\default\cache" /s
+rmdir "\\SOUTHBAYUSER-PC\C$\Users\mcruz\appdata\local\google\chrome\user data\default\code cache" /s
+rmdir "\\SOUTHBAYUSER-PC\C$\Users\mcruz\appdata\local\google\chrome\user data\default\GPUCache" /s
+
+robocopy C:\Users\ccostello\Documents \\btc-file01\Personal\ccostello\Backup /E /ZB /DCOPY:T /COPYALL /XJ /R:1 /W:1 /V /TEE /NFL /NDL /NJH /NJS
+
+/e copy all directors
+/zb restartable mode if access is denied
+/copyall all properties copied
+/xj no juntions
+/r:1 try once
+/w:1 try once
+/tee write status to output
+/log write status to log
+
+robocopy /dcopy:
+
+robocopy c:\users\nhernandez\desktop\printshop23\ c:\users\public\documents\printshop23
