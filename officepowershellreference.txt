@@ -44,3 +44,14 @@ Remove-UnifiedGroupLinks -Identity "Scrum" -Links rhodge@ascendsoftware.com -Lin
 Remove-UnifiedGroupLinks -Identity "Technical Team" -Links rhodge@ascendsoftware.com -LinkType Members
 
 Remove-UnifiedGroupLinks -Identity "The Sonar" -Links rhodge@ascendsoftware.com -LinkType Members
+
+
+Get all mailboxes with forwarding 
+Get-Mailbox | Where {$_.ForwardingAddress -ne $null} | Select Name, UserPrincipalName, ForwardingAddress, DeliverToMailboxAndForward
+
+Set forwarding
+Set-Mailbox -Identify "Username" -delivertomailboxandforward $true -forwardingaddress "Username"
+
+Get forwarding on mailboxes
+
+Get-Mailbox -Identity "username" | select {$_.forwardingaddress}
