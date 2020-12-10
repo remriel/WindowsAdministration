@@ -1,0 +1,24 @@
+SERVER
+Set-SmbServerConfiguration -EnableMultiChannel $true -force"
+Set-SmbServerConfiguration -EnableOplocks $true -force"
+Set-SmbServerConfiguration -ServerHidden $true -force"
+Set-SmbServerConfiguration -IrpStackSize 20 -force"
+Set-SmbServerConfiguration -MaxMpxCount 4096 -force"
+Set-SmbServerConfiguration -MaxWorkItems 16384 -force"
+Set-SmbServerConfiguration -MaxSessionPerConnection 16384 -force"
+Set-SmbServerConfiguration -EnableSMB2Protocol $true -force"
+Set-SmbServerConfiguration -TreatHostAsStableStorage $true -force"
+Set-SmbServerConfiguration -EncryptData $false -force"
+
+CLIENT
+Set-SmbClientConfiguration -EnableBandwidthThrottling $false -force
+Set-SmbClientConfiguration -EnableLargeMtu $true -force
+Set-SmbClientConfiguration -EnableLoadBalanceScaleOut $true -force
+Set-SmbClientConfiguration -EnableMultiChannel $true -force
+Set-SmbClientConfiguration -EnableSecuritySignature $false -force
+Set-SmbClientConfiguration -MaxCmds 16384 -force
+Set-SmbClientConfiguration -MaximumConnectionCountPerServer 32 -force
+Set-SmbClientConfiguration -OplocksDisabled $false -force
+Set-SmbClientConfiguration -RequireSecuritySignature $false -force
+Set-SmbClientConfiguration -UseOpportunisticLocking $true -force
+Set-SmbClientConfiguration -WindowSizeThreshold 8 -force

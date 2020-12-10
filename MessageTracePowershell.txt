@@ -1,0 +1,1 @@
+Get-MessageTrace -Status FilteredAsSpam,Quarantined,Failed | Export-Csv C:\Users\George\Desktop\reports.csv

@@ -1,0 +1,37 @@
+﻿Connect-SPOService -Url https://mullerco-admin.sharepoint.com 
+Set-SPOSite -Identity https://mullerco.sharepoint.com/sites/TeamOxnard -DenyAddAndCustomizePages 0
+Connect-PnPOnline -url https://mullerco.sharepoint.com/sites/TeamOxnard 
+Disable-PnPFeature -Identity 94c94ca6-b32f-4da9-a9e3-1f3d343d7ecb -force -Scope web #SharePoint Server Publishing Infrastructure of Site
+Disable-PnPFeature -Identity f6924d36-2fa8-4f0b-b16d-06b7250180fa -force -Scope site #SharePoint Server Publishing Infrastructure of Site Collection
+Enable-PnPFeature -Identity dffaae84-60ee-413a-9600-1cf431cf0560 -force #RollupPages 
+Enable-PnPFeature -Identity 22a9ef51-737b-4ff2-9346-694633fe4416 -force #Publishing
+Enable-PnPFeature -Identity f6924d36-2fa8-4f0b-b16d-06b7250180fa -force -Scope site #SharePoint Server Publishing Infrastructure of Site Collection
+Enable-PnPFeature -Identity 94c94ca6-b32f-4da9-a9e3-1f3d343d7ecb -force -Scope web #SharePoint Server Publishing Infrastructure of Site 
+
+    $cred = Get-Credential
+
+    Connect-PnPOnline "https://mullerco-admin.sharepoint.com" -Credentials $cred
+
+    $SiteCollections = Get-PnPTenantSite
+
+    foreach ($SiteCollection in $SiteCollections)
+
+
+    Set-PnPList -Identity $listName -Hidden $true
+    {
+
+     Connect-PnPOnline -Url $SiteCollection.Url -Credentials $cred
+
+     Enable-PnPFeature -Identity 8a4b8de2-6fd8-41e9-923c-c7c3c00f8295 -force -Scope site
+
+    }
+
+
+Connect-SPOService -Url https://mullerco-admin.sharepoint.com
+Set-SPOSite https://mullerco.sharepoint.com/sites/TeamOxnard -DenyAddAndCustomizePages 0
+Set-PnPList -Identity "Form Templates" -Hidden $true
+
+New-PnPList -Title "Sold-TermProps - Canwood" -Template DocumentLibrary -OnQuickLaunch
+New-PnPList -Title "Sold-TermProps - Westlake" -Template DocumentLibrary -OnQuickLaunch
+New-PnPList -Title "Sold-TermProps - MS Services" -Template DocumentLibrary -OnQuickLaunch
+New-PnPList -Title "Sold-TermProps - Creekside" -Template DocumentLibrary -OnQuickLaunch

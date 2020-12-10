@@ -1,0 +1,4 @@
+DISM /Online /Cleanup-Image /RestoreHealth /Source:C:\Users\smsadmin\Downloads\sources\install.wim /LimitAccess
+Dism.exe /online /Cleanup-Image /StartComponentCleanup
+DISM /Online /Cleanup-Image /RestoreHealth
+sfc /scannow

@@ -1,0 +1,30 @@
+PREREQUISITE
+Set-Service -Name defragsvc -StartupType Manual
+
+
+GET SIZE OF DRIVES
+Invoke-command -ComputerName caprock22 -ScriptBlock {Get-WmiObject -Class Win32_logicaldisk}
+
+
+RESIZE PARTITION
+$servers = Get-Content 'C:\MININT\Computers.txt'
+ForEach ($server in $servers)
+{      
+    $MaxSize = (invoke-command -ComputerName $server -ScriptBlock { Get-PartitionSupportedSize -DriveLetter c }).sizeMax
+    invoke-command -ComputerName $server -ScriptBlock {Resize-Partition -DriveLetter c -Size $using:MaxSize}
+}
+
+
+#enable defrag service to query disk management
+Invoke-Command -ComputerName CAPROCK28 -ScriptBlock {Set-Service -Name defragsvc -StartupType Manual}
+#get max size of C drive and save in variable
+$MaxSize = (Invoke-Command -ComputerName CAPROCK28 -ScriptBlock {Get-PartitionSupportedSize -DriveLetter C}).sizeMax
+#expand drive to $MaxSize
+Invoke-Command -ComputerName CAPROCK28 -ScriptBlock {Resize-Parition -DriveLetter C -Size $using:MaxSize}
+#disable defrag service
+Invoke-Command -ComputerName CAPROCK28 -ScriptBlock {Set-Service -Name defragsvc -StartupType Disabled}
+
+Invoke-Command CAPROCK28 {Set-Service -Name defragsvc -StartupType Manual}
+$MaxSize=(Invoke-Command CAPROCK28 {Get-PartitionSupportedSize -DriveLetter C}).sizeMax
+Invoke-Command CAPROCK28 {Resize-Partition -DriveLetter C -Size $using:MaxSize}
+Invoke-Command CAPROCK28 {Set-Service -Name defragsvc -StartupType Disabled}
